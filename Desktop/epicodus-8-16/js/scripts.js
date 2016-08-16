@@ -36,4 +36,29 @@ $(document).ready(function() {
   //   i++;
   // });
 
+  $("#text_enter").submit(function(event) {
+
+    var sentence = $("#user_input").val();
+    var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+    // for (var i = 0; i <= sentence.length; i++) {
+    //   for (var n = 0; i <= vowels.length; n++) {
+    //     if (sentence[i] === vowels[n]) {
+    //       sentence = sentence.replace(vowels[n], "-");
+    //     };
+    //   };
+    // };
+
+    for(var i = 0; i < vowels.length; i++){
+      for (var n = 0; n < sentence.length; n++){
+        if (sentence[n] === vowels[i]) {
+          sentence = sentence.replace(vowels[i], "-");
+        };
+      }
+    }
+
+  $("#sentence_output").append(sentence);
+  event.preventDefault();
+  });
+
 });
