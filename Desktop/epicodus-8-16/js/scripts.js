@@ -14,12 +14,26 @@ $(document).ready(function() {
 
     // var count_to = $("#input1").val();
     // var count_by = $("#input2").val();
-    // var output = 0;
+    // // var output = 0;
     // for (var i = 0; i <= count_to; i+=count_by) {
-    //   output = count_by;
+    //   // output = count_by;
     //   $("#output").append("<li>" + i + ", " + "</li>");
     // };
 
   event.preventDefault();
   });
+
+  var flavors = ["vanilla","mint","chocolate","strawberry"];
+  var li_ids = ["#flavor1", "#flavor2", "#flavor3", "#flavor4"];
+  var n = 0;
+  for (var i = 0; i <= flavors.length; i++) {
+    $(li_ids[n]).text(flavors[n]);
+    n++;
+  };
+
+  // flavors.forEach(function(flavor){
+  //   $(li_ids[i]).text(flavor);
+  //   i++;
+  // });
+
 });
