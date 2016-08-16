@@ -54,8 +54,8 @@ $(document).ready(function() {
         if (sentence[n] === vowels[i]) {
           sentence = sentence.replace(vowels[i], "-");
         };
-      }
-    }
+      };
+    };
 
   $("#sentence_output").append(sentence);
   event.preventDefault();
@@ -66,19 +66,53 @@ $(document).ready(function() {
 
     var factorial = $("#user_factor").val();
 
-    // for (var i = 1; i < factorial; i++) {
-    //   (factorial * i);
-    //   alert("loop");
-    // }
+    var num = factorial
+    for (var i = 1; i < num; i++) {
+      factorial = factorial * i;
+    }
 
-    var num = factorial;
-    answer = 1;
-    while (num >= 1) {
-      answer = answer * num;
-      num -= 1;
+    // var num = factorial;
+    // answer = 1;
+    // while (num >= 1) {
+    //   answer = answer * num;
+    //   num -= 1;
+    // };
+
+  $("#factorial_output").text(factorial);
+  event.preventDefault();
+  });
+
+  $("#palindrome").submit(function(event) {
+
+    var palindrome = $("#userPalin").val();
+    var n = palindrome.length - 1;
+    var isPalin = "true";
+
+    for (var i = 0; i < palindrome.length; i++) {
+      if (palindrome[i] === palindrome[n]) {
+        n -= 1;
+      } else {
+        isPalin="false";
+      };
     };
 
-  $("#factorial_output").append(answer);
+  $("#palinOutput").append(isPalin);
+  event.preventDefault();
+  });
+
+  $("#prime").submit(function(event) {
+    var number = $("#userNumber").val();
+    var list = [];
+    for (i = 2; i <= number; i++) {
+      list.push(i);
+    };
+
+    for (n = 1; n <= list.length; n++) {
+      for (multiplier = 2; n*multiplier <= number; multiplier++) {
+        list[i*multiplier - 2] = x;
+      };
+    };
+
   event.preventDefault();
   });
 
