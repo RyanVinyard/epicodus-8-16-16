@@ -61,4 +61,25 @@ $(document).ready(function() {
   event.preventDefault();
   });
 
+
+  $("#factorial").submit(function(event) {
+
+    var factorial = $("#user_factor").val();
+
+    // for (var i = 1; i < factorial; i++) {
+    //   (factorial * i);
+    //   alert("loop");
+    // }
+
+    var num = factorial;
+    answer = 1;
+    while (num >= 1) {
+      answer = answer * num;
+      num -= 1;
+    };
+
+  $("#factorial_output").append(answer);
+  event.preventDefault();
+  });
+
 });
